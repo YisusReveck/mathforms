@@ -29,13 +29,14 @@
 
       background:
         linear-gradient(to bottom, rgba(var(--surface-rgb), 0.7), rgba(var(--surface-rgb), 0.7)),
-        url('/assets-paper/eliscraft-vintage-5388229.jpg') 50% 50% / cover;
+        // url('./assets-paper/eliscraft-vintage-5388229.jpg') 50% 50% / cover;
+        url('../../../../public/assets-paper/eliscraft-vintage-5388229.jpg') 50% 50% / cover;
 
       // Tu máscara de papel rasgado
-      mask-image: url('/assets-paper/torn-paper.png');
+      mask-image: url('../../../../public/assets-paper/torn-paper.png');
       mask-size: 100% 100%; // Fuerza a que la máscara cubra todo el alto dinámico
       mask-repeat: no-repeat;
-      -webkit-mask-image: url('/assets-paper/torn-paper.png');
+      -webkit-mask-image: url('../../../../public/assets-paper/torn-paper.png');
       -webkit-mask-size: 100% 100%;
     }
 

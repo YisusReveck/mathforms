@@ -1,0 +1,11 @@
+// @forward './abstracts/radius';
+// @forward './abstracts/spacing';
+// @forward './abstracts/typography';
+
+@forward './theme/colors';
+@forward './layout/container';
+@forward './layout/grid';
+
+:root {
+  --footer-height: 3rem;
+}

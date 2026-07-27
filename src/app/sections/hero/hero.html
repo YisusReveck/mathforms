@@ -1,0 +1,85 @@
+<section id="above-fold">
+  <header class="header">
+    <div class="header__background"></div>
+
+    <div class="container">
+      <h1 class="header__title">Formularios de Matemáticas</h1>
+      <a
+        href="https://github.com/YisusReveck"
+        target="_blank"
+        rel="noreferrer"
+        class="header__author"
+      >
+        por <span>YisusReveck</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="information container grid">
+    <p class="information__description">
+      Guías visuales para hacer tu estudio más ameno, recomiendo usarlas junto a tus libros
+      preferidos. Si tienes algún comentario, me encantaría leerte:
+      <app-tooltip text="Envíame un correo ₍^. .^₎" placement="top">
+        <a
+          href="mailto:miranda.jfmo@gmail.com?subject=Comentario sobre los Formularios"
+          class="content__link"
+          >[miranda.jfmo@gmail.com]</a
+        >
+      </app-tooltip>
+      .
+    </p>
+
+    <p class="information__good_luck">¡Mucha suerte! ૮₍ ´ ꒳ `₎ა</p>
+
+    <ul class="information__info-list">
+      <li>
+        <p>Gratuito y solo para uso personal →</p>
+        <a href="/math_forms/LICENSE.txt" download class="information__license-link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 22 22"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <line x1="10" y1="9" x2="8" y2="9"></line>
+          </svg>
+          Licencia CC BY-NC-ND 4.0
+        </a>
+      </li>
+      <li>
+        <p>Diseñados para ser impresos en hoja A5</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section-separator"></div>
+
+  <!-- Botón descargar todo -->
+  <div class="download-all">
+    <div class="download-all__stack">
+      @for (f of formularios.slice(0, 8); track f.titulo; let i = $index) {
+        <img
+          [src]="f.preview"
+          [alt]="'Preview stack'"
+          class="download-all__stack--stack-item"
+          [style.--index]="i"
+        />
+      }
+    </div>
+
+    <a href="/math_forms/Math Forms - YisusReveck.pdf" download class="download-all__btn">
+      Descargar todos los formularios
+    </a>
+  </div>
+
+  <div class="section-separator"></div>
+</section>

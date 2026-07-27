@@ -1,0 +1,289 @@
+// ─── UTILITIES ───────────────────────────────────────────────────────────────
+
+.section-separator {
+  width: 30%;
+  height: 1px;
+  background: rgba(var(--surface-tint-rgb), 0.14);
+  margin: 0 auto;
+}
+
+// ─── ABOVE THE FOLD ───────────────────────────────────────────────────────────────
+
+#above-fold {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .header {
+    animation: fadeSlideUp 0.6s;
+    padding: 2.5rem 1rem;
+    position: relative;
+
+    .header__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      background:
+        linear-gradient(to bottom, rgba(var(--surface-rgb), 0.7), rgba(var(--surface-rgb), 0.7)),
+        url('/assets-paper/eliscraft-vintage-5388229.jpg') 50% 50% / cover;
+
+      // Tu máscara de papel rasgado
+      mask-image: url('/assets-paper/torn-paper.png');
+      mask-size: 100% 100%; // Fuerza a que la máscara cubra todo el alto dinámico
+      mask-repeat: no-repeat;
+      -webkit-mask-image: url('/assets-paper/torn-paper.png');
+      -webkit-mask-size: 100% 100%;
+    }
+
+    &__title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem); // ya está bien
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--on-surface);
+      margin: 2.5rem 0 0.5rem 0;
+      text-align: center;
+    }
+
+    &__author {
+      display: block;
+      align-items: center;
+      gap: 0.25rem;
+      color: var(--on-surface);
+      font-size: 1rem;
+      text-decoration: none;
+      margin-bottom: 2rem;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        margin-bottom: 3rem;
+      }
+
+      span {
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        transition: color 0.2s;
+        color: var(--accent);
+        cursor: pointer;
+        color: rgba(var(--surface-tint-rgb), 0.8);
+
+        &:hover {
+          color: rgba(var(--surface-tint-rgb), 0.65);
+        }
+      }
+    }
+  }
+
+  .information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto 1.5rem;
+
+    //   Tablet
+    @media (min-width: 768px) {
+      margin: 0 auto 3rem;
+    }
+
+    &__description {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(var(--on-surface-rgb), 0.65);
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      text-wrap: pretty;
+      max-width: 90%;
+
+      //   Tablet
+      @media (min-width: 768px) {
+        // margin-bottom: 2.5rem;
+        max-width: 65%;
+      }
+
+      // Desktop
+      @media (min-width: 1200px) {
+        max-width: 55%;
+      }
+
+      a {
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+        color: rgba(var(--surface-tint-rgb), 1);
+
+        &:hover {
+          color: rgba(var(--surface-tint-rgb), 0.65);
+        }
+      }
+    }
+
+    &__good_luck {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(var(--on-surface-rgb), 0.65);
+      width: 100%;
+      text-align: center;
+      margin: 0;
+    }
+
+    &__info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      animation: fadeSlideUp 0.6s ease;
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        p {
+          font-size: 1rem;
+          line-height: 1.7;
+          color: rgba(var(--on-surface-rgb), 0.65);
+          margin: 0;
+        }
+
+        &:before {
+          content: '✓';
+          color: var(--surface-tint);
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    &__license-link {
+      color: rgba(var(--surface-tint-rgb), 1);
+      font-size: 1rem;
+      transition: opacity 0.2s ease;
+      white-space: nowrap;
+      text-decoration: none;
+      margin-left: 0.5rem;
+
+      &:hover {
+        color: rgba(var(--surface-tint-rgb), 0.65);
+      }
+    }
+  }
+
+  .download-all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    animation: fadeSlideUp 0.6s ease;
+
+    @media (min-width: 768px) {
+      margin-bottom: 2.5rem;
+    }
+
+    // ── "Imagen" de stack de previews ─────────────────────────────────────────────────────
+
+    &__stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 140px;
+      aspect-ratio: 1 / 1.414;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+      perspective: 1000px;
+      user-select: none;
+
+      @media (min-width: 768px) {
+        margin-bottom: 3rem;
+      }
+
+      &--stack-item {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: 0 4px 15px rgba(var(--card-rgb), 0.15);
+        opacity: 0;
+        animation: stackEntrance 0.8s ease forwards;
+        animation-delay: calc(var(--index) * 0.05s + 0.2s);
+
+        transform: translateX(calc((var(--index) - 3.5) * 15px))
+          rotate(calc((var(--index) - 3.5) * 6deg)) translateY(calc(abs(var(--index) - 3.5) * 1px));
+
+        transition: transform 0.3s ease;
+
+        @media (min-width: 480px) {
+          transform: translateX(calc((var(--index) - 3.5) * 30px))
+            rotate(calc((var(--index) - 3.5) * 8deg))
+            translateY(calc(abs(var(--index) - 3.5) * 1px));
+        }
+      }
+
+      @keyframes stackEntrance {
+        from {
+          opacity: 0;
+          transform: translateY(20px) rotate(0deg);
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+    }
+
+    // ── Botón descargar todos ─────────────────────────────────────────────────
+
+    &__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      background: var(--surface-tint);
+      color: var(--surface);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+      user-select: none;
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+
+      @media (min-width: 768px) {
+        padding: 0.8rem 2rem;
+      }
+
+      &:hover {
+        background: rgba(var(--surface-tint-rgb), 0.8);
+      }
+    }
+  }
+}
+
+// ─── GENERAL ANIMATIONS ───────────────────────────────────────────────────────────────
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

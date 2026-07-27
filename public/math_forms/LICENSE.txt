@@ -1,0 +1,58 @@
+LICENCIA — Formularios de Matemáticas de YisusReveck
+Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional (CC BY-NC-ND 4.0)
+
+Copyright (c) 2026 YisusReveck
+
+───────────────────────────────────────────────────────────────────────────────
+
+Usted es libre de:
+
+  Compartir — copiar y redistribuir el material en cualquier medio o formato.
+
+Bajo las siguientes condiciones:
+
+  Atribución (BY)
+    Debe dar crédito de manera adecuada, indicando que el material proviene
+    de YisusReveck, e incluir un enlace a la licencia. No puede sugerir que
+    el licenciante le respalda a usted o al uso que hace del material.
+
+  NoComercial (NC)
+    No puede utilizar el material con fines comerciales. Esto incluye, sin
+    limitación: venderlo, incluirlo en productos de pago, cursos, membresías,
+    paquetes de recursos, impresión bajo demanda o cualquier servicio
+    monetizado.
+
+  SinDerivadas (ND)
+    Si remezcla, transforma o crea a partir del material, no puede distribuir
+    el material modificado.
+
+───────────────────────────────────────────────────────────────────────────────
+
+Uso permitido:
+
+  - Descargar e imprimir los formularios para estudio o consulta personal.
+  - Guardar copias locales para uso propio.
+
+Uso NO permitido:
+
+  - Vender o monetizar los formularios de cualquier forma.
+  - Modificar los formularios y distribuir versiones modificadas.
+  - Usar el material sin dar la atribución correspondiente.
+  - Sugerir que el autor respalda el uso del material.
+
+───────────────────────────────────────────────────────────────────────────────
+
+Atribución sugerida:
+"Formularios de Matemáticas por YisusReveck — github.com/YisusReveck"
+
+───────────────────────────────────────────────────────────────────────────────
+
+Texto legal completo (en inglés):
+https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+
+Resumen legible (en español):
+https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es
+
+───────────────────────────────────────────────────────────────────────────────
+
+Para permisos adicionales o uso comercial, visita https://yisusreveck.github.io/mathforms/

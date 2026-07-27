@@ -1,0 +1,64 @@
+@use 'sass:color';
+
+// ─── VARIABLES DE COLOR ───────────────────────────────────────────────────────
+
+// Light Mode (Papel y Café)
+// Dark Mode (Biblioteca Nocturna)
+$surface-light: #f7f3ed; // crema envejecida
+$text-light: #3a2f26;
+$card-light: #fbf8f3; // papel ligeramente distinto del fondo
+$accent-light: #7a4e2d; // marrón apagado
+$accent-light: #8b5e3c; // marrón apagado
+$details-light: #6b705c; // verde oliva seco
+
+$surface-dark: #1e1c1a; // Gris cálido desaturado
+$text-dark: #d1c7bd; // Arena suave, descansa la vista
+$card-dark: #262321; // Sutilmente más claro que el fondo
+$accent-dark: #b49d8b; // Café cenizo "pastel"
+// $details-dark: #a5a58d; // verde grisáceo suave
+
+// FUNCION PARA SACAR RGB
+@function to-rgb($color) {
+  @return #{color.channel($color, 'red', $space: rgb)},
+    #{color.channel($color, 'green', $space: rgb)}, #{color.channel($color, 'blue', $space: rgb)};
+}
+
+// ─── MODO CLARO ───────────────────────────────────────────────────────────────
+
+:root {
+  --surface: #{$surface-light};
+  --surface-rgb: #{to-rgb($surface-light)};
+
+  --on-surface: #{$text-light};
+  --on-surface-rgb: #{to-rgb($text-light)};
+
+  --card: #{$card-light};
+  --card-rgb: #{to-rgb($card-light)};
+
+  --surface-tint: #{$accent-light};
+  --surface-tint-rgb: #{to-rgb($accent-light)};
+
+  // Sin utilizar
+  //   --details: #{$details-light};
+  //   --details-rgb: #{to-rgb($details-light)};
+}
+
+// ─── MODO OSCURO ───────────────────────────────────────────────────────────────
+
+html[data-theme='dark'] {
+  --surface: #{$surface-dark};
+  --surface-rgb: #{to-rgb($surface-dark)};
+
+  --on-surface: #{$text-dark};
+  --on-surface-rgb: #{to-rgb($text-dark)};
+
+  --card: #{$card-dark};
+  --card-rgb: #{to-rgb($card-dark)};
+
+  --surface-tint: #{$accent-dark};
+  --surface-tint-rgb: #{to-rgb($accent-dark)};
+
+  // Sin utilizar
+  //   --details: #{$details-dark};
+  //   --details-rgb: #{to-rgb($details-dark)};
+}

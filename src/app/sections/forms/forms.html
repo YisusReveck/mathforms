@@ -1,0 +1,23 @@
+<section class="forms container grid">
+  @for (f of formularios; track f.titulo) {
+    <div class="forms__card-wrapper col-4 col-md-3 col-lg-3" appFadeInOnScroll>
+      <article class="forms__card">
+        <div class="forms__preview">
+          <img [src]="f.preview" [alt]="'Vista previa de ' + f.titulo" loading="lazy" />
+        </div>
+
+        <div class="forms__body">
+          <h2 class="forms__title">{{ f.titulo }}</h2>
+          @if (f.descripcion) {
+            <p class="forms__desc">{{ f.descripcion }}</p>
+          }
+          <a [href]="f.archivo" download class="forms__btn"> Descargar </a>
+        </div>
+      </article>
+    </div>
+  }
+</section>
+
+<div class="last_update">
+  <p>última actualización: 26 de julio de 2026</p>
+</div>

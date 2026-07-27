@@ -1,0 +1,29 @@
+:root {
+  --spacing-unit: 8px;
+  --container-max: 1400px;
+  --gutter: 24px;
+  --margin-mobile: 16px;
+  --margin-tablet: 32px;
+  --margin-desktop: 64px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--margin-mobile);
+}
+
+// Tablet
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--margin-tablet);
+  }
+}
+
+// Desktop
+@media (min-width: 1200px) {
+  .container {
+    padding-inline: var(--margin-desktop);
+  }
+}

@@ -1,0 +1,96 @@
+.download-all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  animation: fadeSlideUp 0.6s ease;
+
+  @media (min-width: 768px) {
+    margin-bottom: 2.5rem;
+  }
+
+  // ── "Imagen" de stack de previews ─────────────────────────────────────────────────────
+
+  &__stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    aspect-ratio: 1 / 1.414;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    perspective: 1000px;
+    user-select: none;
+
+    @media (min-width: 768px) {
+      margin-bottom: 3rem;
+    }
+
+    // Un único offset base por breakpoint; el resto del cálculo
+    // (traslación, rotación y elevación por índice) es compartido.
+    --stack-offset: 15px;
+    --stack-rotate: 6deg;
+
+    @media (min-width: 480px) {
+      --stack-offset: 30px;
+      --stack-rotate: 8deg;
+    }
+
+    &--stack-item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 4px 15px rgba(var(--card-rgb), 0.15);
+      opacity: 0;
+      animation: stackEntrance 0.8s ease forwards;
+      animation-delay: calc(var(--index) * 0.05s + 0.2s);
+
+      transform: translateX(calc((var(--index) - 3.5) * var(--stack-offset)))
+        rotate(calc((var(--index) - 3.5) * var(--stack-rotate)))
+        translateY(calc(abs(var(--index) - 3.5) * 1px));
+
+      transition: transform 0.3s ease;
+    }
+
+    @keyframes stackEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(20px) rotate(0deg);
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  // ── Botón descargar todos ─────────────────────────────────────────────────
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    background: var(--surface-tint);
+    color: var(--surface);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+
+    @media (min-width: 768px) {
+      padding: 0.8rem 2rem;
+    }
+
+    &:hover {
+      background: rgba(var(--surface-tint-rgb), 0.8);
+    }
+  }
+}

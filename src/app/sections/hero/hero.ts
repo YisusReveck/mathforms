@@ -6,7 +6,7 @@ import { FORMULARIOS } from '@data/forms.data';
   selector: 'app-hero',
   imports: [Tooltip],
   templateUrl: './hero.html',
-  styleUrl: './hero.scss',
+  styleUrls: ['./hero.scss', './hero-download.scss'],
 })
 export class Hero {
   formularios = FORMULARIOS;

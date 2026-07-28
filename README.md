@@ -28,7 +28,8 @@ ng serve
 ## Licencia
 
 - **Código:** MIT — ver [LICENSE](LICENSE).
-- **Formularios (PDFs e imágenes en `/public/math_forms`):** CC BY-NC-ND 4.0 — ver [texto completo](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode).
+- **Contenido de autoría propia (`/public/math_forms` y `/public/rain.png`):** CC BY-NC-ND 4.0 — ver [texto completo](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode).
+- **Contenido de terceros:** algunos assets provienen de terceros y ese contenido **no** está cubierto por ninguna de las licencias anteriores. Ver [CREDITS.md](CREDITS.md) para el detalle de origen de cada asset.
 
 ## Autor
 
